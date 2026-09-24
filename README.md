@@ -1,4 +1,4 @@
-# Arquitetura Paralela & Jogos p/ Consoles 🎮⚙️
+# Arquitetura Paralela & Jogos p/ Consoles 
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![LibGDX](https://img.shields.io/badge/LibGDX-E33632?style=for-the-badge&logo=libgdx&logoColor=white)
@@ -33,9 +33,9 @@ Sistema de controlo de um elevador e de passageiros num prédio, inspirado na es
   * Criação de interfaces gráficas retro em Swing que desenham o estado interno das *threads* em tempo real (filas, portas, cabine).
 
 ### 3. Oficina Game - Produtor/Consumidor
-**Diretório:** [`/Produtor_Consumidor_Exemplo_Aula`](./Produtor_Consumidor_Exemplo_Aula)[cite: 7]
+**Diretório:** [`/Produtor_Consumidor_Exemplo_Aula`](./Produtor_Consumidor_Exemplo_Aula).
 
-Uma versão visual e interativa do problema clássico da computação concorrente, onde um Lenhador (Produtor) gera madeira e os Carpinteiros (Consumidores) a utilizam[cite: 7].
+Uma versão visual e interativa do problema clássico da computação concorrente, onde um Lenhador (Produtor) gera madeira e os Carpinteiros (Consumidores) a utilizam.
 * **Tecnologias:** Java Puro.
 * **Conceitos:** Partilha de Recursos Limitados, *Render Loop* em Terminal.
 * **Competências Desenvolvidas:**
@@ -43,9 +43,9 @@ Uma versão visual e interativa do problema clássico da computação concorrent
   * Implementação de um *Game Loop* simplificado via consola que atualiza e monitoriza os estados das *threads* dinamicamente.
 
 ### 4. Sistema de Transações Bancárias (Wallet)
-**Diretório:** [`/Wallet_Exemplo_Aula`](./Wallet_Exemplo_Aula)[cite: 7]
+**Diretório:** [`/Wallet_Exemplo_Aula`](./Wallet_Exemplo_Aula).
 
-Um laboratório de testes focado em proteger blocos de memória durante depósitos massivos e simultâneos[cite: 7].
+Um laboratório de testes focado em proteger blocos de memória durante depósitos massivos e simultâneos.
 * **Tecnologias:** Java Puro.
 * **Conceitos:** *Mutex*, Região Crítica, Serialização de Processos.
 * **Competências Desenvolvidas:**
