@@ -9,8 +9,10 @@ public class Menu {
 		// TODO Auto-generated method stub
 	
 			Wallet wallet = new Wallet();
-			
-			Transacao Tw1 = new Transacao (5000, wallet);
+			// Erro não determinístico - Sincronização:
+			// Sequenciar a serialização do programa
+			// Uso do Mutex no menor trecho possível
+			Transacao Tw1 = new Transacao (1000, wallet);
 			Transacao Tw2 = new Transacao (3000, wallet);
 			
 			Tw1.start();
