@@ -51,7 +51,7 @@ Exemplo de uma simulação de transição bancária, dada em sala de aula, com e
   * Identificação de quebras de concorrência onde lógicas básicas (`saldo += 1`) falham no multithread.
   * Resolução de *Deadlocks* arquitetando corretamente os blocos `try-catch-finally` para garantir a libertação de semáforos, independentemente de falhas de execução.
 
-### 5. Simulador Tráfego - Multitreading (GPU / LibGDX)
+### 5. Simulador de Tráfego - Multitreading (GPU / LibGDX)
 **Diretório:** [`/Simulador_Trafego`](./Simulador_Trafego).
 
 <img width="640" height="478" alt="Atividade_3_Consoles" src="https://github.com/user-attachments/assets/a410922f-0b34-49fe-8d31-8c5f916547aa" />
