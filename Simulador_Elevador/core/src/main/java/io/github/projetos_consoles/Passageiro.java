@@ -7,14 +7,15 @@ public class Passageiro extends Thread {
     
     public volatile float x;
     public volatile float y;
-    public volatile int estado; // 0=Aguardando, 1=No Elevador, 2=Saindo
+    public volatile int estado; // Se, 0= Aguardando, 1= Dentro do Elevador, 2= Saindo
 
     public Passageiro(String nomeTextura, int andarOrigem, int andarDestino) {
         this.nomeTextura = nomeTextura;
         this.andarOrigem = andarOrigem;
         this.andarDestino = andarDestino;
+        // O elevador começara no estado de Aguardo
         this.estado = 0;
-        this.x = 80; // Inicia na sala da esquerda
+        this.x = 80; //Eixo x para demarcar a entrada das pôneis
         this.y = 20 + (andarOrigem * 114);
     }
 
@@ -48,7 +49,7 @@ public class Passageiro extends Thread {
             
             Predio.semAcaoConcluida.release();
 
-            // O passageiro após desembarcar andará para o final da tela
+            // O pônei andará até o final da tela, até a secção saída
             while(this.x < 950) {
                 this.x += 2;
                 Thread.sleep(15);

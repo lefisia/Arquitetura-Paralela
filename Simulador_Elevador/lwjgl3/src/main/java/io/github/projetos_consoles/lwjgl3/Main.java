@@ -1,5 +1,7 @@
 package io.github.projetos_consoles.lwjgl3;
 
+
+// Para eu conseguir rodar esse programa, terei que: pasta do arquivo>show in> terminal> digital .\gradlew lwjgl3:run
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 import io.github.projetos_consoles.ElevadorGame;
@@ -9,7 +11,7 @@ public class Main {
         Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
         config.setTitle("Simulador de Elevador Mágico");
         
-        // Background e tela
+        // Background e tela da simulação
         config.setWindowedMode(900, 800);
         config.useVsync(true);
         config.setForegroundFPS(60);

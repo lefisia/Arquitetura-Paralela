@@ -64,7 +64,7 @@ public class ElevadorGame extends ApplicationAdapter {
         float larguraElevador = 900; 
         float alturaElevador = 850;
         
-        // Centralizar as portas no eixo do filete roxo
+        // Tentaiva de centralizar as portas no eixo do filete roxo
         float offsetElevadorX = (larguraElevador / 2) - 60; 
         float offsetElevadorY = (alturaElevador / 2) - 40; 
         
@@ -78,7 +78,7 @@ public class ElevadorGame extends ApplicationAdapter {
         float larguraPonei = 850;
         float alturaPonei = 850;
         float offsetPoneiX = (larguraPonei / 2) - 25;
-        float offsetPoneiY = (alturaPonei / 2) - 20; // tentativa de fazer a pônei ficar no chão
+        float offsetPoneiY = (alturaPonei / 2) - 20; // tentativa de fazer a pônei ficar no chão, mas algumas ficaram flutuando
 
         for (int i = 0; i < 6; i++) {
             Passageiro p = passageiros[i];

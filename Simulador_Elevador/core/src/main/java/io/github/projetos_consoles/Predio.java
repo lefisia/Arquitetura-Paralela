@@ -6,12 +6,12 @@ import java.util.concurrent.Semaphore;
 
 public class Predio {
     public static final int NUM_ANDARES = 7;
-    public static final int CAPACIDADE = 2; // Tentativa de 2 passageiros
+    public static final int CAPACIDADE = 2; // Tentativa de 2 passageiros por elevador
 
     // Semáforo Mutex
     public static Semaphore mutex = new Semaphore(1);
     
-    // Semáforos para sinalizar a condição
+    // Semáforos para sinalizar a condição do elevaodor
     public static Semaphore[] semEmbarque = new Semaphore[NUM_ANDARES];
     public static Semaphore[] semDesembarque = new Semaphore[NUM_ANDARES];
     public static Semaphore semAcaoConcluida = new Semaphore(0);
