@@ -18,7 +18,7 @@ O atual sistema simula o fluxo de um prédio de 7 andares. Cada passageiro e a p
 *   **Multithreading:** Múltiplas classes herdando de `Thread`.
 *   **Mutex:** Bloqueio do acesso às listas para que apenas uma Thread funcione por vez.
 *   **Semáforos:** Utilização de `java.util.concurrent.Semaphore` para sinalizar ao passageiro da scondições do elevador e os momentos de embarque/desembarque.
-*   **Delegação de Exceções (`throws`):** Tratamento do `InterruptedException` que ocorrem com os métodos `.sleep()` e `.acquire()`.
+*   **Delegação de `throws`:** Tratamento do `InterruptedException` que ocorrem com os métodos `.sleep()` e `.acquire()`e fazem as *Threads* serem interrompidas.
   
 ## 4. Como Executar o Projeto?
 **Execução via Terminal:**
