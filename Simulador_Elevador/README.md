@@ -2,7 +2,7 @@
 ## 1. Sobre o Projeto
 Este projeto é uma aplicação gráfica construída em **Java** com o motor gráfico **LibGDX**, focado nos estudos sobre programação concorrente/paralela.
 
-O atual sistema simula o fluxo de um prédio de 7 andares. Cada passageiro e a própria cabine do elevador operam como *Threads* completamente independentes. O grande desafio tecnológico foi coordenar as *Threads* para embarcarem e desembarcarem com segurança, tudo a 60 FPS. Além disso, problemas como **condições de *Race Conditions* e*Deadlocks* foram resolvidos com êxito.
+O atual sistema simula o fluxo de um prédio de 7 andares. Cada passageiro e a própria cabine do elevador operam como *Threads* completamente independentes. O grande desafio tecnológico foi coordenar as *Threads* para embarcarem e desembarcarem com segurança, tudo a 60 FPS. Além disso, problemas como *Race Conditions* e *Deadlocks* foram resolvidos com êxito.
 
 <img width="800" height="711" alt="Atividade_1_bimestral_V0 1" src="https://github.com/user-attachments/assets/c5bcd67e-3524-48e2-885f-4495d6c66e17" />
 
