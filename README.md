@@ -61,7 +61,22 @@ Uma simulação de tráfego gráfica desenvolvida em Java e LibGDX, onde cada ve
 * **Conceitos:** *Mutex*, Região Crítica, Sincronização de *Threads* com *Semáforos*.
 * **Competências Desenvolvidas:**
   * Implementação de coordenadas voláteis e tratamento de concorrência para sincronizar atualizações de *Threads* a 60 FPS.
-  * Mapeamento de zonas de risco e exclusão mútua em um layout de via cruzada usando *Semáforo*;
+  * Mapeamento de zonas de risco e exclusão mútua em um layout de via cruzada usando *Semáforo*.
+
+### 6. Simulador de Elevador - Multithreading (GPU / LibGDX)
+
+**Diretório:** [`/Simulador_Elevador`](./Simulador_Elevador)
+
+<img width="800" height="710" alt="Atividade_1_bimestral" src="https://github.com/user-attachments/assets/011cb196-5718-4543-ba9d-14ca20de0d18" />
+
+Uma simulação gráfica desenvolvida em Java e LibGDX, onde um elevador e diversos passageiros operam de forma concorrente com *Threads* independentes. O sistema possui fluxo de embarque e desembarque em um prédio de sete andares.
+
+*   **Tecnologias:** Java, LibGDX.
+*   **Conceitos:** *Mutex*, Região Crítica, Sincronização de *Threads* com *Semáforos*.
+*   **Competências Desenvolvidas:**
+    *   Implementação de coordenadas voláteis e dimensionamento gráfico dinâmico a 60 FPS.
+    *   Mapeamento de estados de passageiros (aguardando, no elevador e saindo) e gestão de filas de acesso através de matrizes de *Semáforos*.
+    *   Tratamento de concorrência e exclusão mútua na lotação do elevador.
 
 ---
 
