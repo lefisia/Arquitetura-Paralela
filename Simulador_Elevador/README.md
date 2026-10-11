@@ -1,33 +1,27 @@
-# Elevador
+# 📑 Trabalho Bimestral 1: Simulador de Elevador
+## 1. Sobre o Projeto
+Este projeto é uma aplicação gráfica construída em **Java** com o motor gráfico **LibGDX**, focado nos estudos sobre programação concorrente/paralela.
 
-A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
+O atual sistema simula o fluxo de um prédio de 7 andares. Cada passageiro e a própria cabine do elevador operam como *Threads* completamente independentes. O grande desafio tecnológico foi coordenar as *Threads* para embarcarem e desembarcarem com segurança, tudo a 60 FPS. Além disso, problemas como **condições de *Race Conditions* e*Deadlocks* foram resolvidos com êxito.
 
-This project was generated with a template including simple application launchers and an `ApplicationAdapter` extension that draws libGDX logo.
+<img width="800" height="711" alt="Atividade_1_bimestral_V0 1" src="https://github.com/user-attachments/assets/c5bcd67e-3524-48e2-885f-4495d6c66e17" />
 
-## Platforms
 
-- `core`: Main module with the application logic shared by all platforms.
-- `lwjgl3`: Primary desktop platform using LWJGL3; was called 'desktop' in older docs.
+## 2. Tecnologias Utilizadas
 
-## Gradle
+*   **Linguagem:** Java 
+*   **Motor Gráfico:** LibGDX 
+*   **Build:** Gradle 
+*   **IDE:** Eclipse IDE for Java Develops 
 
-This project uses [Gradle](https://gradle.org/) to manage dependencies.
-The Gradle wrapper was included, so you can run Gradle tasks using `gradlew.bat` or `./gradlew` commands.
-Useful Gradle tasks and flags:
-
-- `--continue`: when using this flag, errors will not stop the tasks from running.
-- `--daemon`: thanks to this flag, Gradle daemon will be used to run chosen tasks.
-- `--offline`: when using this flag, cached dependency archives will be used.
-- `--refresh-dependencies`: this flag forces validation of all dependencies. Useful for snapshot versions.
-- `build`: builds sources and archives of every project.
-- `cleanEclipse`: removes Eclipse project data.
-- `cleanIdea`: removes IntelliJ project data.
-- `clean`: removes `build` folders, which store compiled classes and built archives.
-- `eclipse`: generates Eclipse project data.
-- `idea`: generates IntelliJ project data.
-- `lwjgl3:jar`: builds application's runnable jar, which can be found at `lwjgl3/build/libs`.
-- `lwjgl3:run`: starts the application.
-- `test`: runs unit tests (if any).
-
-Note that most tasks that are not specific to a single project can be run with `name:` prefix, where the `name` should be replaced with the ID of a specific project.
-For example, `core:clean` removes `build` folder only from the `core` project.
+## 3. Conceitos Aplicados
+*   **Multithreading:** Múltiplas classes herdando de `Thread`.
+*   **Mutex:** Bloqueio do acesso às listas para que apenas uma Thread funcione por vez.
+*   **Semáforos:** Utilização de `java.util.concurrent.Semaphore` para sinalizar ao passageiro da scondições do elevador e os momentos de embarque/desembarque.
+*   **Delegação de Exceções (`throws`):** Tratamento do `InterruptedException` que ocorrem com os métodos `.sleep()` e `.acquire()`.
+  
+## 4. Como Executar o Projeto?
+**Execução via Terminal:**
+  1. Faça o clone do repositório;
+  2. Navegue até ao diretório raiz do projeto: `cd Simulador_Elevador`
+  3. No terminal, escreva: `.\gradlew lwjgl3:run` + `enter`
