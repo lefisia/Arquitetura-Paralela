@@ -1,9 +1,10 @@
 package io.github.projetos_consoles;
 
+//2) Criação da Class Elevador, Nela teremos:
 public class Elevador extends Thread {
     public volatile float x = 390; 
     public volatile float y = 20; 
-    public volatile int andarAtual = 0;
+    public volatile int andarAtual = 0; // Condição para cada situação. Isto é: 0= aguardando
     public volatile boolean portaAberta = false;
     private int direcao = 1;
 
@@ -51,6 +52,8 @@ public class Elevador extends Thread {
         return alguemQuerDescer || alguemQuerSubir;
     }
 
+    
+    // Aqui, para o elevador
     private boolean semChamadas() {
         if (!Predio.passageirosNoElevador.isEmpty()) return false;
         for (int i = 0; i < Predio.NUM_ANDARES; i++) {
@@ -64,7 +67,56 @@ public class Elevador extends Thread {
         portaAberta = true;
         Thread.sleep(500);
     }
+    
+    // Foi feita uma pesquisa e uma tentativa de implementação do throws, pois a thread estava sendo interrompida misteriosamente
+    // Descobriu- se que a implementação do throws delega essas interrupções (sleep + acquire) para o método run()
+    // Obs.: Estudar mais isso!
+    private void fecharPorta() throws InterruptedException {
+        Thread.sleep(500);
+        portaAberta = false;
+        Thread.sleep(500);
+    }
 
+    private void realizarDesembarques() throws InterruptedException {
+        while (true) {
+            Predio.mutex.acquire();
+            boolean alguemDesce = false;
+            for (Passageiro p : Predio.passageirosNoElevador) {
+                if (p.andarDestino == andarAtual) alguemDesce = true;
+            }
+            Predio.mutex.release();
+
+            if (!alguemDesce) break;
+
+            Predio.semDesembarque[andarAtual].release();
+            Predio.semAcaoConcluida.acquire(); 
+        }
+    }
+
+    private void realizarEmbarques() throws InterruptedException {
+        while (true) {
+            Predio.mutex.acquire();
+            boolean podeEmbarcar = !Predio.filasAndares[andarAtual].isEmpty() && Predio.passageirosNoElevador.size() < Predio.CAPACIDADE;
+            Predio.mutex.release();
+
+            if (!podeEmbarcar) break;
+
+            Predio.semEmbarque[andarAtual].release();
+            Predio.semAcaoConcluida.acquire(); 
+        }
+    }
+
+    private void visitarAndar(int destino) throws InterruptedException {
+        float targetY = 20 + (destino * 114); 
+        
+        while (this.y != targetY) {
+            if (this.y < targetY) this.y += 2;
+            else this.y -= 2;
+            Thread.sleep(10); 
+        }
+        this.andarAtual = destino;
+    }
+}
     private void fecharPorta() throws InterruptedException {
         Thread.sleep(500);
         portaAberta = false;

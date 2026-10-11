@@ -1,5 +1,7 @@
 package io.github.projetos_consoles;
 
+
+//3) Criação da class Passageiro Pônei
 public class Passageiro extends Thread {
     public String nomeTextura;
     public int andarOrigem;
@@ -15,7 +17,7 @@ public class Passageiro extends Thread {
         this.andarDestino = andarDestino;
         // O elevador começara no estado de Aguardo
         this.estado = 0;
-        this.x = 80; //Eixo x para demarcar a entrada das pôneis
+        this.x = 80; // Eixo x para demarcar a entrada das pôneis
         this.y = 20 + (andarOrigem * 114);
     }
 

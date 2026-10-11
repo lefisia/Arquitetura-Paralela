@@ -20,9 +20,10 @@ public class ElevadorGame extends ApplicationAdapter {
     private Passageiro[] passageiros;
 
     @Override
+    // Teste de câmera. Ela deu muitos erros e não é recomendada para esta situação
     public void create() {
-        camera = new OrthographicCamera();
-        camera.setToOrtho(false, 900, 800);
+       //camera = new OrthographicCamera();
+        //camera.setToOrtho(false, 900, 800);
         
         batch = new SpriteBatch();
         imgFundo = new Texture("background.png");
@@ -53,9 +54,10 @@ public class ElevadorGame extends ApplicationAdapter {
     public void render() {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-        camera.update();
-        batch.setProjectionMatrix(camera.combined); 
+        
+        // Update() da câmera
+        //camera.update();
+        //batch.setProjectionMatrix(camera.combined); 
 
         batch.begin();
         batch.draw(imgFundo, 0, 0, 900, 800);
@@ -77,15 +79,15 @@ public class ElevadorGame extends ApplicationAdapter {
         // --- PÔNEIS ---
         float larguraPonei = 850;
         float alturaPonei = 850;
-        float offsetPoneiX = (larguraPonei / 2) - 25;
-        float offsetPoneiY = (alturaPonei / 2) - 20; // tentativa de fazer a pônei ficar no chão, mas algumas ficaram flutuando
+        float offsetPoneiX = (larguraPonei / 2) - 25; // tentativa de redimensionar a pônei
+        float offsetPoneiY = (alturaPonei / 2) - 20; // mesma tentativa, mas algumas ficaram flutuando na tela
 
         for (int i = 0; i < 6; i++) {
             Passageiro p = passageiros[i];
             if (p != null) {
                 Texture tex = obterTexturaPonei(p.nomeTextura);
                 
-                if (p.estado == 1) { 
+                if (p.estado == 1) { // Se o estado da pônei for 1 = Dentro do Elevador:
 
                     int indexNoElevador = Predio.passageirosNoElevador.indexOf(p);
                     float slotX = elevador.x - 30 + (indexNoElevador * 40); 
